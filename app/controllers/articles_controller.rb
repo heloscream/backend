@@ -41,6 +41,10 @@ class ArticlesController < ApplicationController
   end
 
    def article_params
-     params.require(:article).permit(:title, :url, :summary, :description)
+     params.require(:article).permit(:title, :url, :summary, :description,:published)
+   end
+
+   def getscore
+
    end
 end
