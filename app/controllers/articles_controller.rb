@@ -12,10 +12,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
     @article = Article.new(article_params)
     if @article
+      debugger;
       @article.save
+      @article.update_column("published",true)
       render json: @article, status: :created, location: @article
     else
       render json: @article.errors,  status: :unprocessable_entity
