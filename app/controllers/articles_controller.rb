@@ -37,10 +37,11 @@ class ArticlesController < ApplicationController
     if params[:search]
       search = params[:search]
       articles = Article.where('title LIKE ?', "%#{search}%")
+      render json: articles, status: 'article found'
     else
-      articles = Article.all
+      render json: articles.errors,  status: 'article  not found'
     end
-    render json: articles
+
   end
 
 
