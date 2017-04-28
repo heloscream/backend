@@ -33,6 +33,16 @@ class ArticlesController < ApplicationController
     @article.destroy
   end
 
+  def search
+    if params[:search]
+      search = params[:search]
+      articles = Article.where('title LIKE ?', "%#{search}%")
+    else
+      articles = Article.all
+    end
+    render json: articles
+  end
+
 
   private
 
