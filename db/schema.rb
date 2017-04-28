@@ -20,11 +20,17 @@ ActiveRecord::Schema.define(version: 20170427052911) do
     t.text     "summary"
     t.string   "url"
     t.text     "description"
+<<<<<<< HEAD
 
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "published",   default: false
 
+=======
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "published",   default: false
+>>>>>>> e1845ebb8decae94acaf819a0a8d17829402acda
   end
 
 end
