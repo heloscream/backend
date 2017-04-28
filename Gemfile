@@ -23,6 +23,8 @@ gem 'rack-cors'
 
 gem 'twitter'
 
+gem 'odyssey'
+
 gem 'pg'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

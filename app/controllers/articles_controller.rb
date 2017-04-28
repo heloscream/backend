@@ -54,7 +54,11 @@ class ArticlesController < ApplicationController
      params.require(:article).permit(:title, :url, :summary, :description,:published)
    end
 
-   def getscore
-
-   end
+  def get_readability_score
+    striped_text = strip_tags(params[:text]).delete("\n").squish
+    p "STRIPPED TEXT"
+    p striped_text
+    readability_score = Readabilty.readabilty_score(striped_text)
+    render json: {status: 200,data: readability_score}
+  end
 end
