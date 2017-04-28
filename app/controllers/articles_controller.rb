@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
       search = params[:search]
       articles = Article.where('title LIKE ?', "%#{search}%")
     else
-      Aricle.all
+      Article.all
     end
     render json:articles
   end
